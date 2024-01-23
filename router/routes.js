@@ -21,4 +21,13 @@ router.post("/api/contact", async (req, res) => {
   }
 });
 
+router.get("/api/contacts", async (req, res) => {
+  try {
+    const contacts = await Contact.find();
+    res.status(200).json(contacts);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;
