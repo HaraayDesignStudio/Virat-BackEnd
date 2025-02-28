@@ -7,9 +7,10 @@ const bodyParser = require("body-parser");
 
 const router = require("./router/routes"); // Adjust the path as needed
 
-app.use(cors({
-    origin: "*",
-}));
+//app.use(cors({
+ //   origin: "*",
+//}));
+app.use(cors());
 
 const PORT = 8000;
 const DB = process.env.MONGO_URL;
